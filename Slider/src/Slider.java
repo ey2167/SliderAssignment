@@ -35,7 +35,10 @@ Slider(){
 	scroll1.addAdjustmentListener(new AdjustmentListener(){
 		public void adjustmentValueChanged(AdjustmentEvent e){
 			 red = e.getValue();
-			instructions1.setForeground(new Color(red,green,blue));
+			instructions1.setForeground(new Color(red,green,blue)); 
+			/**
+			 * the label instructions will change in coolor with the the red value
+			 */
 		}
 	});
 	
@@ -45,6 +48,9 @@ Slider(){
 		public void adjustmentValueChanged(AdjustmentEvent e){
 			 green = e.getValue();
 			instructions1.setForeground(new Color(red,green,blue));
+			/**
+			 * the label instructions will change in color with the the green value
+			 */
 		}
 	});
 	scroll3 = new JScrollBar(0,1,100,1,255);
@@ -52,6 +58,9 @@ Slider(){
 		public void adjustmentValueChanged(AdjustmentEvent e){
 			 blue = e.getValue();
 			instructions1.setForeground(new Color(red,green,blue));
+			/**
+			 * the label instructions will change in color with the the blue value
+			 */
 		}
 	});
 	instructions1.setLayout(new BorderLayout());
