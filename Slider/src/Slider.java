@@ -25,22 +25,35 @@ public class Slider extends JFrame {
 	private JLabel instructions1;
 	
 	private JScrollBar scroll1;
-	private JSlider scroll2;
-	private JSlider scroll3;
+	private JScrollBar scroll2;
+	private JScrollBar scroll3;
+	int red,green,blue;
 Slider(){
 	instructions1 = new JLabel("SHOW THEM COLORS");
 
-	scroll1 = new JScrollBar();
+	scroll1 = new JScrollBar(0,1,100,1,255);
 	scroll1.addAdjustmentListener(new AdjustmentListener(){
 		public void adjustmentValueChanged(AdjustmentEvent e){
-			int red = e.getValue();
-			instructions1.setForeground(new Color(red));
+			 red = e.getValue();
+			instructions1.setForeground(new Color(red,green,blue));
 		}
 	});
 	
 	
-	scroll2 = new JSlider(JSlider.HORIZONTAL,0,255,1);
-	scroll3 = new JSlider(JSlider.HORIZONTAL,0,255,1);
+	scroll2 = new JScrollBar(0,1,100,1,255);
+	scroll2.addAdjustmentListener(new AdjustmentListener(){
+		public void adjustmentValueChanged(AdjustmentEvent e){
+			 green = e.getValue();
+			instructions1.setForeground(new Color(red,green,blue));
+		}
+	});
+	scroll3 = new JScrollBar(0,1,100,1,255);
+	scroll3.addAdjustmentListener(new AdjustmentListener(){
+		public void adjustmentValueChanged(AdjustmentEvent e){
+			 blue = e.getValue();
+			instructions1.setForeground(new Color(red,green,blue));
+		}
+	});
 	instructions1.setLayout(new BorderLayout());
 	add(instructions1, BorderLayout.CENTER);
 	/**
